@@ -1,0 +1,9 @@
+file_format: "1"
+id: narfpad
+name: NARFPAD
+type: shield
+url: https://github.com/sebastian-stumpf/narfpad
+requires: [xiao_ble]
+features:
+  - keys
+
