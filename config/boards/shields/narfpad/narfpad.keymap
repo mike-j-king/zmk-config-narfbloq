@@ -14,6 +14,13 @@
             bindings = <&kp LG(K) &kp Z>;
         };
 
+        pin_window: pin_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            /* VS Code: Pin Editor = Cmd+K then Shift+Enter */
+            bindings = <&kp LG(K) &kp LS(ENTER)>;
+        };
+
         td_sidebar_lower: td_sidebar_lower {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -27,9 +34,9 @@
         default_layer {
             label= "DEFAULT";
             bindings = <
-                          &td_sidebar_lower  &kp LC(GRAVE)       &kp LG(LS(J))
-                          &kp LS(TAB)        &kp UP              &kp TAB
-            &zen_toggle    &kp LEFT           &kp DOWN            &kp RIGHT
+                          &kp LG(W)          &zen_toggle         &kp LG(P)
+                          &kp LG(LS(G))      &kp LG(S)           &kp LG(LA(I))
+            &pin_window    &td_sidebar_lower  &kp LG(J)           &kp LG(LS(I))
             >;
             sensor-bindings = <&inc_dec_kp LG(GRAVE) LG(LS(GRAVE))>;
         };
