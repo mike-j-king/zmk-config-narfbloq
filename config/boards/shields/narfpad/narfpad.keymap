@@ -27,6 +27,21 @@
             tapping-term-ms = <250>;
             bindings = <&kp LG(B) &tog LOWER>;
         };
+
+        td_find: td_find {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp LG(F) &kp LG(LS(F))>;
+        };
+
+        td_refs_hierarchy: td_refs_hierarchy {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            /* VS Code (macOS): References = Shift+F12, Call Hierarchy = Shift+Option+H */
+            bindings = <&kp LS(F12) &kp LS(LA(H))>;
+        };
     };
 
     keymap {
@@ -35,7 +50,7 @@
             label= "DEFAULT";
             bindings = <
                           &kp LG(W)          &zen_toggle         &kp LG(P)
-                          &kp LG(LS(G))      &kp LG(S)           &kp LG(LA(I))
+                          &td_refs_hierarchy &kp LG(S)           &td_find
             &pin_window    &td_sidebar_lower  &kp LG(J)           &kp LG(LS(I))
             >;
             sensor-bindings = <&inc_dec_kp LG(GRAVE) LG(LS(GRAVE))>;
