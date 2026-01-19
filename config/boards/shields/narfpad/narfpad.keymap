@@ -22,7 +22,7 @@
             /* Cursor: Pin = Cmd+R then Shift+Enter */
             bindings = <&kp LG(R) &kp LS(ENTER)>;
         };
-        
+
         td_sidebar_lower: td_sidebar_lower {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -51,12 +51,12 @@
         default_layer {
             label= "DEFAULT";
             bindings = <
-                          &kp LG(W)          &td_cmdl_cmdenter   &kp LG(S)
-                          &td_refs_hierarchy &td_find            &kp LG(P)
+                          &kp LG(W)          &kp LG(P)   &kp LG(S)
+                          &td_refs_hierarchy &kp LG(LS(F))            &kp LG(F)
             &pin_window    &td_sidebar_lower  &kp LG(J)          &kp LG(LS(I))
             >;
-            /* VS Code/Cursor: cycle editors/tabs */
-            sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB))>;
+            /* VS Code/Cursor: cycle editors/tabs (Cmd+Opt+Right and Cmd+Opt+Left) */
+            sensor-bindings = <&inc_dec_kp LG(LA(RIGHT)) LG(LA(LEFT))>;
         };
         lower_layer {
             label = "LOWER";
