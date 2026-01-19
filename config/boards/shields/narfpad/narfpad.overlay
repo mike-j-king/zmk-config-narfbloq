@@ -58,5 +58,7 @@ left_encoder: encoder_left {
         sensors = <&left_encoder>;
         /* Triggers should be 1/4 of the steps for a 1-to-1 feel */
         triggers-per-rotation = <20>;
+    };
+
 };
 
