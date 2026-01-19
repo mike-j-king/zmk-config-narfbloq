@@ -22,6 +22,7 @@
             /* Cursor: Pin = Cmd+R then Shift+Enter */
             bindings = <&kp LG(R) &kp LS(ENTER)>;
         };
+        
         td_sidebar_lower: td_sidebar_lower {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
