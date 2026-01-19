@@ -27,11 +27,11 @@
         default_layer {
             label= "DEFAULT";
             bindings = <
-                          &td_sidebar_lower  &kp LC(GRAVE)       &kp LG(LS(J))
-                          &kp LS(TAB)        &kp UP              &kp TAB
-            &zen_toggle    &kp LEFT           &kp DOWN            &kp RIGHT
+                          &td_sidebar_lower  &kp B               &kp C
+                          &kp D              &kp E               &kp F
+            &zen_toggle    &kp G              &kp H              &kp I
             >;
-            sensor-bindings = <&inc_dec_kp LG(GRAVE) LG(LS(GRAVE))>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
         lower_layer {
             label = "LOWER";
