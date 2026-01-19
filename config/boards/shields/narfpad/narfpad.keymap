@@ -8,19 +8,20 @@
 
 / {
     behaviors {
-        zen_toggle: zen_toggle {
-            compatible = "zmk,behavior-macro";
+
+        td_cmdl_cmdenter: td_cmdl_cmdenter {
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&kp LG(K) &kp Z>;
+            tapping-term-ms = <250>;
+            bindings = <&kp LA(L) &kp LG(ENTER)>;
         };
 
         pin_window: pin_window {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            /* VS Code: Pin Editor = Cmd+K then Shift+Enter */
-            bindings = <&kp LG(K) &kp LS(ENTER)>;
+            /* Cursor: Pin = Cmd+R then Shift+Enter */
+            bindings = <&kp LG(R) &kp LS(ENTER)>;
         };
-
         td_sidebar_lower: td_sidebar_lower {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -49,11 +50,12 @@
         default_layer {
             label= "DEFAULT";
             bindings = <
-                          &kp LG(W)          &zen_toggle         &kp LG(P)
-                          &td_refs_hierarchy &kp LG(S)           &td_find
-            &pin_window    &td_sidebar_lower  &kp LG(J)           &kp LG(LS(I))
+                          &kp LG(W)          &td_cmdl_cmdenter   &kp LG(S)
+                          &td_refs_hierarchy &td_find            &kp LG(P)
+            &pin_window    &td_sidebar_lower  &kp LG(J)          &kp LG(LS(I))
             >;
-            sensor-bindings = <&inc_dec_kp LG(GRAVE) LG(LS(GRAVE))>;
+            /* VS Code/Cursor: cycle editors/tabs */
+            sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB))>;
         };
         lower_layer {
             label = "LOWER";
