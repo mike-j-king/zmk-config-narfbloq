@@ -42,7 +42,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             /* VS Code (macOS): References = Shift+F12, Call Hierarchy = Shift+Option+H */
-            bindings = <&kp LS(F12) &kp LS(LA(H))>;
+            bindings = <&kp  &kp >;
         };
     };
 
@@ -51,9 +51,9 @@
         default_layer {
             label= "DEFAULT";
             bindings = <
-                          &kp LG(W)          &kp LG(P)   &kp LG(S)
-                          &td_refs_hierarchy &kp LG(LS(F))            &kp LG(F)
-            &pin_window    &td_sidebar_lower  &kp LG(J)          &kp LG(LS(I))
+                          &kp LG(W)           &kp LG(LS(F))    &kp LG(F)
+                          &kp LG(LS(L))       &kp LS(F12)      &kp LS(LA(H))
+            &pin_window   &td_sidebar_lower  &kp LG(J)       &kp LG(LS(I))
             >;
             /* VS Code/Cursor: cycle editors/tabs (Cmd+Opt+Right and Cmd+Opt+Left) */
             sensor-bindings = <&inc_dec_kp LG(LA(RIGHT)) LG(LA(LEFT))>;
